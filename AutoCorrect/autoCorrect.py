@@ -5,6 +5,7 @@ import nltk
 # downloading words corpus from the nltk words 
 nltk.download("words")
 from nltk.corpus import words
+from nltk import word_tokenize
 # importing the regex as we are going to need it in finding 
 import re
 
@@ -23,6 +24,8 @@ def jaccardDistance(l1,l2):
 
 # def WordWithSomeLength():
  
+def wordLength(word):
+    return len(word)==len(mainWord) or len(word)==len(mainWord)+1 or len(word)==len(mainWord) +2
 # we just used dynamic programming here 
 def editDistance(str1, str2, m, n):
 
@@ -36,14 +39,18 @@ def editDistance(str1, str2, m, n):
     return 1 + min(editDistance(str1, str2, m, n-1),editDistance(str1, str2, m-1, n),editDistance(str1, str2, m-1, n-1))    # Replace)
 
 def firstWordChecker(word):
-    return word[0]==mainWord[0]
+    return word[0]==mainWord[0] 
 
 # re is function which we can use to find words with some expression 
 def findWords(word):
+    if word in setOfWords:
+        return word
+
     global mainWord
     mainWord=word
-    # matchingWords=list(filter(wordLength,setOfWords))
-    matchingWords=list(filter(firstWordChecker,setOfWords))
+    matchingWords=list(filter(wordLength,setOfWords))
+    matchingWords=list(filter(firstWordChecker,matchingWords))
+    # print(matchingWords)
     word=set(word)
     for i in word:
         bit=re.compile(i)
@@ -52,16 +59,32 @@ def findWords(word):
     ll=[]
     for i in matchingWords:
         ll.append(editDistance(mainWord,i,len(word),len(i))) 
+        # ll.append(jaccardDistance(mainWord,i)) 
+
     return matchingWords[ll.index(min(ll))]
+    # return matchingWords[ll.index(max(ll))]
 # print(matchingWords)
 
 # print(findWords("azmaing"))
 
 
-def main():
-    
-    l=['happpy', 'azmaing', 'intelliengt']
-    for i in l:
-        print(findWords(i))
+a=""
+with open("AutoCorrect/misspelledText.txt") as f:
 
-main()
+    a+=str(f.read())
+
+# print(a)
+
+text=word_tokenize(a)
+# print(text)
+
+
+def main(text):
+    
+    
+    for i in text:
+        print(i +" : "+findWords(i))
+
+
+# l=["hydreong","hldo","daiemetr","cna","millionism","surpe","planste","tinh","erath","hlel","cmomon","dfinitee","lightgnin","frie"]
+main(text)
