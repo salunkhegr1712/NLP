@@ -1,0 +1,40 @@
+Assignment No : 2 
+Topic :  Create tweet tokenizer and solve it using the nltk library
+Mis : 111903033
+Subject : Natural Language Processing 
+
+Context:
+        here in this Assignment we have to make use of the the tweet tokenizer and also we have to make possible many of the conditions
+        and it shoulf be supported by the all lines and it should give proper output according to input 
+
+        Questions to tackle and how you tackled all issues 
+        1. All punctuations are individual tokens. This includes double-quotes and single quotes also. No need to normalize quotation marks further.
+
+            so for that i used the tweet_tokenize from the nltk so i get the words for the punctuations and the emojis as the seperate
+            elements
+        
+        2. Removing appostrophies from words
+            i used simple if else conditions in order to break the words and find the word and its appostrophies
+        
+        3. Breaking camel case and using @ and # as the independent entity 
+            i created function to break camel case and first i created function which can detect that is word contains camel case 
+            or not
+
+        4. Specifying the emojis as the special entity
+            so as we in tweet we use new kind of emojis like :) , :/ so we have to treat them as special entity 
+        
+        5. Split hyphenated words apart in the case of adjectives. Keep the hyphen with word #2. “US-based” -> US –based.
+         However, hyphen can also be a list maker in some cases. “US-Japan” should be three tokens: US, -, and Japan.
+
+            It is easy to find the words from hyphoned text we just split the string using string slicing 
+        
+        6.  A URL is a single token.
+
+            just find the start and then solve it using string comparison 
+            
+        7. If a sentence ends with a word that legitimately has a full stop (abbreviations, for example), add a final full stop.
+
+        8. @ and # as the independent entity
+    
+    conclusion:
+        here how i used the Created a code which can run like tweet tokenizer

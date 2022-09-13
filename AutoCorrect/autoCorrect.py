@@ -3,16 +3,19 @@
 import nltk
 
 # downloading words corpus from the nltk words 
-nltk.download("words")
+# nltk.download("words")
 from nltk.corpus import words
 from nltk import word_tokenize
 # importing the regex as we are going to need it in finding 
 import re
 
 mainWord=""
-setOfWords=words.words()
+setOfWords=[]
+with open("AutoCorrect/words_alpha.txt") as f:
+    setOfWords=f.read().split()
+
 # print(setOfWords)
-# len(setOfWords)
+len(setOfWords)
 
 # code to get jaccard similarity between two words
 def jaccardDistance(l1,l2):
@@ -25,7 +28,7 @@ def jaccardDistance(l1,l2):
 # def WordWithSomeLength():
  
 def wordLength(word):
-    return len(word)==len(mainWord) or len(word)==len(mainWord)+1 or len(word)==len(mainWord) +2
+    return len(word)==len(mainWord) or len(word)==len(mainWord)+1 or len(word)==len(mainWord) +2 or len(word)==len(mainWord) -1 
 # we just used dynamic programming here 
 def editDistance(str1, str2, m, n):
 
@@ -57,12 +60,15 @@ def findWords(word):
         matchingWords=list(filter(bit.findall,matchingWords))
     
     ll=[]
-    for i in matchingWords:
-        ll.append(editDistance(mainWord,i,len(word),len(i))) 
-        # ll.append(jaccardDistance(mainWord,i)) 
 
-    return matchingWords[ll.index(min(ll))]
-    # return matchingWords[ll.index(max(ll))]
+    for i in matchingWords:
+        # print(i)
+        # print(editDistance(mainWord,i,len(word),len(i)))
+        # ll.append(editDistance(mainWord,i,len(word),len(i))) 
+        ll.append(jaccardDistance(mainWord,i)) 
+
+    # return matchingWords[ll.index(min(ll))]
+    return matchingWords[ll.index(max(ll))]
 # print(matchingWords)
 
 # print(findWords("azmaing"))
@@ -75,7 +81,8 @@ with open("AutoCorrect/misspelledText.txt") as f:
 
 # print(a)
 
-text=word_tokenize(a)
+text=word_tokenize("mainlly mdae uup offf hydreong and hleium gssa sruface isis konwn \
+pohtospehre surroundde tinh laeyr knonw tehre wulod leif ")
 # print(text)
 
 
@@ -86,5 +93,6 @@ def main(text):
         print(i +" : "+findWords(i))
 
 
-# l=["hydreong","hldo","daiemetr","cna","millionism","surpe","planste","tinh","erath","hlel","cmomon","dfinitee","lightgnin","frie"]
-main(text)
+
+l=["hydreong","hldo","daiemetr","cna","millionism","surpe","planste","tinh","erath","hlel","cmomon","dfinitee","lightgnin","frie"]
+main(l+text)

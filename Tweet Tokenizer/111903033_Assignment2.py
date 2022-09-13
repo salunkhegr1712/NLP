@@ -50,6 +50,8 @@ def split_dash(sm):
 def camel_case_split(str1):
     l=[]
     n=0
+    if(len(str1)<2):
+        return [str1]
     if (str1.isalpha()):
         s=str1[0]
         n=n+1
@@ -83,19 +85,19 @@ def countUpperCharacters(s,n):
 
 # code where we bring all things together and then we will return
 def breakCamelCase(token):
-    if(token[0]=="@" or token[0]=="#") and checkForCamelCase(token) and countUpperCharacters(token,2) >0 and "/" not in token and "-" not in token :
-        return camel_case_split(token)
+    # if(token[0]=="@" or token[0]=="#") and checkForCamelCase(token) and countUpperCharacters(token,2) >0 and "/" not in token and "-" not in token :
+    #     return camel_case_split(token)
 
-    elif checkForCamelCase(token) and countUpperCharacters(token,1) >0 and "/" not in token and "-" not in token:
+    if checkForCamelCase(token) and countUpperCharacters(token,1) >0 and "/" not in token and "-" not in token:
         return camel_case_split(token)
     # print(fd)
 # breakCamelCase("#GhanshamRajaramSalunkhe")
 
-def breakAndpercent(token):
-    if token=="@":
-        return ['@']
+# def breakAndpercent(token):
+#     if token=="@":
+#         return ['@']
     
-    return [token[0],token[1:]]
+#     return [token[0],token[1:]]
 
 def calculateCharacter(token):
     l=0
@@ -106,9 +108,10 @@ def calculateCharacter(token):
     return len(token)-l
 
 def punctuations(token):
-    
+    ll=[]
     for i in token:
-        print(i)
+        ll.append(i)
+    return ll
     
 
 # # getting data from the file to as a string and we will process it further 
@@ -152,33 +155,57 @@ with open('InputDataset.txt') as f:
 from nltk.tokenize import TweetTokenizer
 ttk=TweetTokenizer() # this will give a tokenizer object as the result 
 # now convert the tokens into the list or array 
-ttk=ttk.tokenize(lines[7])
+# ttk1=ttk.tokenize(lines[0])
 # print(ttk)
 
-print(len(ttk))
+# print(len(ttk1))
+# print(ttk1)
+ll=[]
 
+def giveTokens(ttk1):
+    for i in ttk1:
+        if checkForCamelCase(i):
+            for j in camel_case_split(i):
+                ll.append(j)
 
-for i in ttk:
-    if checkForCamelCase(i):
-        for j in camel_case_split(i):
-            print(j)
-
-    elif i[0]=="@" or i[0]=="#":
-        for j in camel_case_split(i):
-            print(j)
-    
-    elif "-" in i and len(i)>3:
-        for j in split_dash(i):
-            print(i)
-            print(j)
+        # elif i[0]=="@" or i[0]=="#":
+        #     for j in camel_case_split(i):
+        #         # print(j)
+        #         ll.append(j)
         
-    elif ("'" in i and i !="'"):
-        l=parsing(i)
-        for j in l:
-            print(j)
+        elif "-" in i and len(i)>3:
+            for j in split_dash(i):
+                # print(i)
+                # print(j)
+                ll.append(i)
+                ll.append(j)
             
-    elif i.count('.')>2 or i.count(',')>2 or i.count('?')>2 or i.count('!')>2:
-        punctuations(i)
+        elif ("'" in i and i !="'"):
+            l=parsing(i)
+            for j in l:
+                ll.append(j)
+                
+        elif i.count('.')>2 or i.count(',')>2 or i.count('?')>2 or i.count('!')>2:
+            for j in punctuations(i):
+                ll.append(j)
 
-    else:
-        print(i)
+        else:
+            ll.append(i)
+
+    ll.append(".")
+    return ll
+
+print(lines[1])
+ttk1=ttk.tokenize(lines[99])
+ll=giveTokens(ttk1)
+print(ll)
+
+
+# with open("output.txt","a")as f:
+#     for j in lines:
+#         ttk1=ttk.tokenize(j)
+#         ll=giveTokens(ttk1)
+#         for i in ll:
+#             f.write(i+"\n")
+
+print(camel_case_split("ImGhanshamSalunkhe"))
