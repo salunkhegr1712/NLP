@@ -1,0 +1,10 @@
+{'name': 'well-bound', 'ADJ': 1.0}
+{'name': 'rivaled', 'VERB': 1.0}
+{'name': 'Anton', 'NOUN': 1.0}
+{'name': 'drunk', 'ADJ': 0.6764705882352942, 'NOUN': 0.29411764705882354, 'VERB': 0.029411764705882353}
+{'name': 'Preparation', 'NOUN': 1.0}
+{'name': 'Baldy', 'NOUN': 1.0}
+{'name': 'objectionable', 'ADJ': 1.0}
+{'name': 'picayune', 'ADJ': 1.0}
+{'name': 'lurk', 'VERB': 1.0}
+{'name': 'monotony', 'NOUN': 1.0}
