@@ -1,0 +1,75 @@
+In recent days there is increase in research was seen inside the NLG Natural langauge Generation (NLG)
+
+the model and the transformer building has increased demand in recent days 
+
+1) the nlg deals with intelligence text creation process by using the machine learning techniques
+ex: GPT-3, BERT, and XLNet are few of the examples of the transformers inside the NLG
+
+2) The Transformer is based on  encoder-decoder architecture
+
+a) GPT-3
+it is the latest in the Generative Pre-trained Transformer series
+It is an autoregressive language model that was trained with 175 billion parameters to produce human-like text, 
+rendering it the largest language model by a large distance.
+
+b) BERT-BASED MODELS
+bidirectional, unsupervised language representation
+
+Gpt is Generator pre-Trained Transformer which is based on the neural network and used to create texts from the file
+currently it is mode broad neural network created by humans it is one of the model which can give answer most similar to that of the human and it is very much intelligence also
+
+also one important point is that the Gpt model is pretrained so it will perform very well in the enviroment of the small input set
+and it has a demerit that you cant use the gpt to learn from your side no that is not possible in the case of the gpt model
+
+gpt is trained in such a manner that it should easily learn the rules and concept that arises in human texts.
+gpt is very usefull if you are considering that you have a small dataset and want to make the dataset bigger so at that time gpt can play very crucial role in 
+your work it has some applications like create articles, poetry, stories, news reports and dialogue
+
+and main advantages is that you can create all of them from veryu small inference from the user side 
+Gpt is biggest neural model based AI tool for Natural language generation and it is intelligent enough to do tasks text summarizations and even programming code.
+
+Gpt is also good in communication with human as it can create text very close to that of the humans so they can be used to create the chatbots
+and gpt model have very industrial applications in that field
+
+Gpt is also capable of learning to mimic some artist like shakesphere and it can able to create the poetry like the shakesphere
+
+Gpt can be used in gaming also inorder make game dialouge look more alike that of the men and also to write the code like human and do the task like
+suggestion which is found very usefull in coding and such stuff
+
+
+Working :
+GPT-3 is a language prediction model. This means that it has a neural network machine learning model that can take input text as an input and transform it into
+ what it predicts the most useful result will be.it trained by 175 Billion parameters so it is very very smart
+When a user provides text input, the system analyzes the language and uses a text predictor to create the most likely output. Even without much additional tuning or training, the model generates high-quality output text that feels similar to what humans would produce.
+
+Architecture :
+
+so as we say that it is a transformer based model so it will deal with the encoding and the decoding 
+
+so in transformer you can use only one mechanism  such as the stacking the decoder one upon another in such way shown in diagram so as the the gpt transformed 
+the no of stacked decoders are increased 
+
+internal mechanism 
+Training is the process of exposing the model to lots of text. That process has been completed. All the experiments you see now are from that one trained model. It was estimated to cost 355 GPU years and cost $4.6m.
+
+The model’s prediction will be wrong. We calculate the error in its prediction and update the model so next time it makes a better prediction.
+Repeat millions of times
+
+performance
+
+In general, the more parameters a model has, the more data is required to train the model.
+OpenAI GPT-3 can perform tasks with very few or no examples/demonstration (or shots as they are better known).
+Gpt do not need a large dataset to to learn
+
+term to learn:
+
+The Few-shot (FS) setting is kind of similar to how we go about training a machine learning model where we give some inputs and 
+corresponding outputs to a model and then expect the model to perform on an unseen input.
+
+One-Shot (1S) setting is WHERe we provide exactly one input to system and accordance to that system or ML model will try to predict the result 
+
+Zero-Shot (2S) is concept where nothing as input will provided but still we want to get our output (very very hard)
+
+so on basis of 3 parametere the performance of the GPT can be found
+
+

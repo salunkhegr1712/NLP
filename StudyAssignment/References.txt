@@ -1,0 +1,6 @@
+here i will paste the references which we use in case of the to study the transformers inside the nlp
+https://jalammar.github.io/how-gpt3-works-visualizations-animations/
+https://www.techtarget.com/searchenterpriseai/definition/GPT-3
+https://towardsdatascience.com/gpt-3-explained-19e5f2bd3288
+https://www.springboard.com/blog/data-science/machine-learning-gpt-3-open-ai/
+https://towardsdatascience.com/gpt-3-a-complete-overview-190232eb25fd:ww
