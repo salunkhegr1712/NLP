@@ -1,0 +1,123 @@
+
+hello here i will discuss about the T5 transformer and write notes on base of our understanding
+
+T5
+
+before learning T5. There exists two terms called 
+a) pretraining
+b) Finetune 
+
+lets discuss them first and then we will go forward to find out how we can use those term in order to build and enhace our knowledge on top of it 
+
+pretraining is the concept where we can able to train the model with some dataset before treating them to the real life question so here inside this step
+we will provide some input to the model and model will see for the inference collected and then it will make production rules on basis of those rules we will go in 
+further way to tackle the real life problems
+
+fine tune is process where the model will trained by assigning it some task and by doing that task it will learn and enhance its learning
+
+
+notes :
+
+When the model is trained on a large generic corpus, it is called 'pre-training'. 
+When it is adapted to a particular task or dataset it is called as 'fine-tuning'.
+
+both are good ways to teach model it is based on the user which kind user want to choose 
+
+another approach is also there which deals with both of them such that it will learn firstly from the pretraining and the finetune it so that we can enhance its 
+understanding by assigning specific task (such as classification, question-answering, etc.).
+
+Further pre-training means take some already pre-trained model, and basically apply transfer learning - use the already saved weights from the trained model and train it on some new domain. This is usually beneficial if you don't have a very large corpora.
+
+One approach to get around this problem is to first pretrain a deep net on a large-scale dataset, like ImageNet. Then, given a new dataset, we can start with these pretrained weights when training on our new task. This process is commonly called fine-tuning. 
+
+
+both can make able to transfer the knowledge about domain. so as we know that as data is pretrained so model will assign weight to input on basis of 
+pretraining which is given to him 
+The effectiveness of transfer learning has given rise to a diversity of approaches, methodology, and practice. 
+
+# T5 transformer 
+
+T5 stands for Text-to-Text transfer transformer.
+
+The T5 is a type of Transformer that is capable of being trained on a variety of tasks with a uniform architecture. It was created by Google AI 
+
+T5 is also a transformer so it also deals with encoding and decoding which can work on both supervised learning enviroment and unsupervised enviroment
+which used to do text to text conversions.
+
+t5 came with different size
+
+t5-small
+
+t5-base
+
+t5-large
+
+t5-3b
+
+t5-11b.
+
+so it usefull as one can choose the according to its usecase
+
+Based on the original T5 model, Google has released some follow-up works:
+
+T5v1.1: 
+T5v1.1 is an improved version of T5 with some architectural tweaks, and is pre-trained on C4 only without mixing in the supervised tasks.
+
+mT5:
+mT5 is a multilingual T5 model. It is pre-trained on the mC4 corpus, which includes 101 languages. 
+
+byT5: 
+byT5 is a T5 model pre-trained on byte sequences rather than SentencePiece subword token sequences. 
+
+first lets read about the transfer learning and what is it ?
+
+Transfer learning is a machine learning method where a model developed for a task is reused as the starting point for a model on a second task.
+it can be seen like the analogy of the savepoint in game where you have saved so you will dont need to learn things which are known to model just
+ue the previously learned thing and start.
+
+so it can be used as the pretraining so first we train a model completely and then we will use the same model in order to find and solve new problems
+
+imp :
+It is a popular approach in deep learning where pre-trained models are used as the starting point on computer vision and natural language processing tasks given the vast compute and time resources required to develop neural network models on these problems and from the huge jumps in skill that they provide on related problems.
+
+Transfer learning is a machine learning technique where a model trained on one task is re-purposed on a second related task.
+
+Transfer learning and domain adaptation refer to the situation where what has been learned in one setting … is exploited to improve generalization in another setting
+
+
+now lets get back to the T5
+
+T5 needs a large A Large Pre-training Dataset (C4) which is massive diverse and have highly quality
+T5 used C4 To satisfy these requirements, we developed the Colossal Clean Crawled Corpus (C4),
+a cleaned version of Common Crawl that is two orders of magnitude larger than Wikipedia. 
+its cleaning process involved deduplication, discarding incomplete sentences, and removing offensive or noisy content.
+
+C4 is used to create such database  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
