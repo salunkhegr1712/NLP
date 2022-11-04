@@ -1,0 +1,40 @@
+S -->  NP VP
+S -->  X1 VP
+X1 -->  AUX NP
+S -->  VERB NP
+S -->  X2 PP
+S -->  VERB PP
+S -->  VP PP
+NP -->  DET NOMIAL
+NOMIAL -->  NOMIAL NOUN
+NOMIAL -->  NOMIAL PP
+VP -->  VERB NP
+VP -->  X2 PP
+X2 -->  VERB NP
+VP -->  VERB PP
+VP -->  VP PP
+PP -->  PREPOSITION NP
+
+NP -->  i
+NP -->  she
+NP -->  me
+NP -->  twa
+NP -->  houston
+NOMIAL -->  book
+NOMIAL -->  flight
+NOMIAL -->  book
+NOMIAL -->  meal
+NOMIAL -->  money
+VP -->  include
+VP -->  prefer
+VP -->  book
+Det -->  that
+DET -->  this
+DET -->  the
+DET -->  a
+AUX -->  does
+PREPOSITION -->  from
+PREPOSITION -->  near
+PREPOSITION -->  to
+PREPOSITION -->  through
+PREPOSITION -->  on
