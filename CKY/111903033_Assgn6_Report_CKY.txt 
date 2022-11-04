@@ -1,0 +1,78 @@
+here i used a simple flow way to write and use the code and workflow is as give
+
+created two list one for rules containing nonterminals and one for terminals
+
+ntRules=[("S","NP","VP"),("S","X1",'VP'),('X1','AUX','NP'),('S','VERB','NP')....]
+
+tRules=[('NP','i'),('NP',"she"),('NP',"me"),('NP',"twa")....]
+
+# written function to print rules from lists
+def stringMaker(l):
+    s=""
+    for i in l[1:]:
+        s=s+" " +str(i)
+    return f"{ l[0]} --> "+s
+
+def printRules(l):
+    for i in l:
+        print(stringMaker(i))
+
+then created functions which will give terminAL and non terminAL rules
+
+def getTerminalRule(word):
+    k=[]
+    for i in tRules:
+        if(i[1]==word):
+            k.append(i[0])
+    return k
+
+def getNonTerminalRule(a,b):
+    k=[]
+    if a==[] or b==[]:
+        return []
+    for i in ntRules:
+        if i[1] in a and i[2] in b:
+            k.append(i[0])
+    return k
+
+then created a find functions which will give info about the is a S is appeared in matrix or not 
+
+def find(a):
+    for i in a:
+        for j in range(len(i)):
+            if i[j]=="S":
+                return True
+    return False
+
+
+also created 2 functions which help us to visiualise the flow of programmen printMatrix and other is getMatrix
+
+def createMatrix(m):
+    k=0
+    l=[]
+    for i in range(m):
+        l.append(["PHI"]*(m-k))
+        k=k+1
+    return l
+
+def printMatrix(m):
+    s=len(m[0])
+    k=0
+    for i in m:
+        print(str(i))
+        k=k+1
+
+
+then in main functions we wil first iterate through corner pairs and then go inside and we will run through inner element 
+so for inner element we have to iterate through multiple pairs son i also write function for it
+
+def getNumberedPairs(a,k):
+    i=int(a[0])
+    j=int(a[1])
+    # print(i,j)
+    kk=[]
+    # printMatrix(k)
+    for m in range(j):
+        gg=getNonTerminalRule(k[i][m],k[m+1][j-m-1])
+        kk=kk+[gg]
+    return kk
