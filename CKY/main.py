@@ -66,16 +66,6 @@ def getNonTerminalRule(a,b):
             k.append(i[0])
     return k
 
-# this will help us to get the rules related to the non terminals 
-def getNonTerminalRule(a,b):
-    k=[]
-    if a==[] or b==[]:
-        return []
-    for i in ntRules:
-        if i[1] in a and i[2] in b:
-            k.append(i[0])
-    return k
-
 # this will give rules for inner elements of the matrix 
 def getNumberedPairs(a,k):
     i=int(a[0])
