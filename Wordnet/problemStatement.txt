@@ -1,0 +1,19 @@
+Implement the following:
+
+1) Find the lowest common hypernym for any given pair of words as per WordNet
+
+2) Find Lin similarity between any two words as per WordNet. Use Brown information content.
+
+3) Find Resnik similarity between any two words as per WorNet. Use Brown information content.
+
+4) Find Jiang-Conrath distance between any two concepts as per WordNet.
+
+5) Find Leacock-Chodorow similarity between any two concepts as per WordNet.
+
+6) Using senses from WordNet, find the appropriate sense for an ambigous word in the sentence as per lesk algorithm.
+
+What to submit:
+
+Submit the python code: MIS-No-Assign-7-code.py
+
+Output : MIS-No-output-7-code.txt
