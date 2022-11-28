@@ -2,20 +2,22 @@
 import nltk 
 from nltk.corpus import wordnet;
 from nltk.corpus import brown
+from nltk import word_tokenize
 
 # function to gice lowest common hypernym 
 # lcs is basic function with wordnet
 # calculation of information content of the two words 
 # with nltk brown corpus 
-brownIc=wordnet.ic(brown,False,0.0)
+# brownIc=wordnet.ic(brown,False,0.0)
 
+brownIc=""
 def lcs(a,b):
     aa=wordnet.synsets(a)[0]
     bb=wordnet.synsets(b)[0]
     # print(b,c)
     return aa.lowest_common_hypernyms(bb)
 
-print(lcs("bench","wall"))
+# print(lcs("bench","wall"))
 
 # function to return the resnikSimilarity value 
 # formula :IC(c)=−log p(lcs(c,c2))
@@ -68,3 +70,14 @@ def leacockChodorowSimilarity(a,b):
 
 
 # print(leacockChodorowSimilarity("car","brush"))
+
+
+def leskAlgo(s):
+    # create tokens with the help of the string 
+    # so now we created tokens successfulley 
+    a= word_tokenize(s)
+
+    return a
+
+print(leskAlgo("dog and cat"))
+
